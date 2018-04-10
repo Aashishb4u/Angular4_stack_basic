@@ -1,0 +1,34 @@
+<div class="profileContainer">
+    <div >
+        <button style="margin-left:1%;margin-bottom: 10px" (click)="addVendor()" type="button" class="btn btn-primary alignDeleteButton pull-right " ><i class="add-item-icon ion-plus-round"></i> Add Vendor </button>
+    </div>
+    <div class="profileContent " *ngIf="settingComponent">
+        <div id="viewVendors" class="smarttable" type="html">
+            <ng2-smart-table [settings]="settings"
+                             [source]="source"
+                             (edit) = "editVendor($event)"
+                             (delete)= "deleteVendor($event)">
+            </ng2-smart-table>
+        </div>
+    </div>
+</div>
+
+<div class="confirmUserActiveContainer">
+    <modal #deleteVendorModal [closeOnOutsideClick]="false">
+        <modal-header>
+            <div class="test"><span class="headerText">Are you sure you want to delete this vendor?</span></div>
+        </modal-header>
+        <modal-content>
+            <div class="confirmButtonsContainer">
+                <div class="confirmButtons">
+                    <div class="noButton">
+                        <button class="noConfirm" (click)="deleteVendorModal.close()">No</button>
+                    </div>
+                    <div class="yesButton">
+                        <button class="yesConfirm" (click)="deleteVendorFinal()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </modal-content>
+    </modal>
+</div>

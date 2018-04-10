@@ -1,0 +1,426 @@
+@import "../../../styles";
+@import "../../theme/sass/_auth";
+@import "../../theme/sass/mixins";
+
+$font-size: 13px;
+
+.confirmUserActiveContainer {
+  @include confirmDialogueActiveInActive();
+}
+
+
+body .modal-backdrop.fade {
+  opacity: 0.6;
+}
+
+.main-campaign {
+  padding-top: 110px;
+  //Profile Tab CSS
+  .panel {
+    .panel-body {
+      .wizard {
+        min-width: 95%;
+        float: left;
+        background: #fff;
+        margin: 0 2.5%;
+        border: 1px solid #E0E0E0;
+        .profileTab {
+          width: 25%;
+          float: left;
+          text-align: center;
+          border-right: 1px solid #E0E0E0;
+          height: 50px;
+          line-height: 50px;
+          cursor: pointer;
+          font-size: 12px;
+          &:last-child {
+            border-right: none;
+          }
+          a {
+            text-transform: uppercase;
+            .profileIcon {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      .currentTab {
+        //font-size: 14px !important;
+        border-bottom: 3px solid $btn-color;
+        color: $btn-color;
+      }
+      .disableTab {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+
+.ion-document:before {
+  content: "\F12F";
+  //margin-right: 14px;
+}
+.alignIonEdit {
+  margin-right: 0px !important;
+}
+
+#viewVendors{
+  .ion-edit:before {
+    content: "\F2BF";
+    margin-right: 14px;
+    color: #000000;
+  }
+  .ion-trash-b:before {
+    content: "\F252";
+    color: #ff0000;
+  }
+  .fa-rupee:before, .fa-inr:before {
+    content: "\F156";
+    margin-right: 3px;
+  }
+}
+
+
+//.fa-inr:before
+
+.profileContainer {
+  margin: 91px 2.5% 50px 2.5%;
+  padding: 15px;
+  background: white;
+  min-width: 95%;
+  overflow-y: auto;
+  border-radius: $border-radius;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  //float: left;
+
+  .inputbutton {
+    text-align: center;
+    margin: 1.9% 0 2% 0;
+  }
+  .form-control[disabled] {
+    color: grey;
+    border-color: lightgrey;
+  }
+  .form-control {
+    border-radius: $border-radius;
+  }
+  .required {
+    color: red;
+  }
+
+  .profileContent {
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 0%;
+    .profileInput {
+      padding-bottom: 30px;
+      float: left
+    }
+  }
+  .userImageContainer {
+    position: relative;
+    .profileDiv {
+      position: absolute;
+      bottom: 21px;
+      left: 180px;
+      padding-right: 0;
+      .profileImage {
+        font-size: 14px;
+        color: #777777;
+        padding: 10px;
+        box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+        border-radius: $border-radius;
+        border: 1px solid #E0E0E0;
+        background: $body-bg;
+        width: 100%;
+      }
+    }
+  }
+  .userUrlContainer {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    .userUrl {
+      font-weight: 600;
+      padding-top: 1%;
+      padding-bottom: 2%;
+    }
+    .userUrlMessage {
+      padding-bottom: 1%;
+    }
+    .userUrlBox {
+      border: 1px solid #E0E0E0;
+      //padding:10px 0;
+      width: 97%;
+      margin: 2% 1.5%;
+      box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+      background-color: $body-bg;
+      border-radius: $border-radius;
+      .userUrlButton {
+        background-color: white;
+        height: 25px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-align: center ;
+        border: 1px solid $border-universal-color;
+        width: 40%;
+        border-radius: $border-radius;
+        color: grey
+
+      }
+
+    }
+    .urlButtons {
+      float: right;
+      height: 45px;
+      margin-left: 1%;
+      width: 19.6%;
+      color: white;
+      font-size: medium;
+      cursor : pointer;
+      font-weight: bold;
+      background-color: $btn-color;
+      border-radius: $border-radius;
+      border: none;
+    }
+    .urlCancelButtons {
+      float: right;
+      height: 45px;
+      margin-left: 1%;
+      font-size: medium;
+      color: grey;
+      font-weight: bold;
+      cursor : pointer;
+      width: 19.6%;
+      background-color: white;
+      border-radius: $body-bg;
+      border-radius: $border-radius;
+      border: 1px solid;
+    }
+    .buttonsUrl{
+      float: left;
+      padding-top: 10px;
+    }
+
+  }
+  .userImage {
+    width: 150px;
+    height: auto;
+    margin: 0 6px 6px 0;
+    .userProfileImage {
+      border: 1px solid #E0E0E0;
+      border-radius: $border-radius;
+      width: 100%;
+      margin-left: 0.4%;
+    }
+  }
+  .userImageDiv {
+    padding-bottom: 15px;
+    padding-top: 11px;
+    float: left;
+  }
+
+  .changePasswordContent {
+    text-align: center;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 0%;
+    .changePasswordInput {
+      height: 53px;
+      margin: 1.9% 0 0 0;
+      display: inline-block;
+    }
+    .confirmButtonsContainer {
+      display: inline-block;
+    }
+    .confirmPassword {
+      padding-right: 0;
+      padding-left: 0
+    }
+    .right-border {
+      border-bottom-right-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+    .input-group {
+      .input-group-addon {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+      }
+    }
+    input::-webkit-input-placeholder {
+      color: #666666;
+    }
+
+  }
+  .changePasswordErrorMessage {
+    margin-top: -15px;
+    width: 100%;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .small {
+    font-size: 100%;
+  }
+
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .help-block {
+    color: red;
+  }
+  .sub-little-signUp-error {
+    font-size: 14px;
+  }
+  .sectionTitle {
+    font-weight: 600;
+    padding-top: 1%;
+    padding-bottom: 2%;
+  }
+  .sectionTitleImage {
+    font-weight: 600;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+}
+#viewVendors {
+  overflow-x: auto;
+}
+//#viewVendors table .ng2-smart-actions{
+//  //width: 8% !important;
+//  //width: 200px !important;
+//}
+#viewVendors table > thead > tr > th:nth-child(2) {
+  text-align: center;
+  width: 145px !important;
+}
+
+#viewVendors table > thead > tr > th:nth-child(1) {
+  text-align: center;
+  //width: 200px !impo;
+}
+#viewVendors table > thead > tr > th:nth-child(4) {
+  text-align: center;
+}
+#viewVendors table > thead > tr > th:nth-child(3) {
+  text-align: center;
+  width: 150px !important;
+}
+
+#viewVendors table > thead > tr > th:nth-child(5) {
+  text-align: center;
+  width: 130px !important;
+}
+
+#viewVendors table > thead > tr > th:nth-child(6) {
+  text-align: center;
+}
+
+#viewVendors table > thead > tr > th:nth-child(7) {
+  text-align: center;
+  width: 100px !important;
+}
+
+@media only screen and (min-device-width: 310px) and (max-device-width: 320px) {
+  .profileForm {
+    padding-right: 0 !important;
+  }
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .main-campaign {
+    .panel {     //Profile Tab CSS
+      .panel-body {
+        .wizard {
+          .profileTab {
+            a{
+              .tabText {
+                display: none;
+              }
+              .profileIcon {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .profileContainer {
+    .profileContent {
+      .profileForm {
+        .userImageContainer {
+          margin-bottom: 40px;
+          .profileDiv {
+            left: 20px;
+            bottom: -40px;
+            padding: 0;
+          }
+          .profileImage {
+            width: 94%;
+            font-size: 13px;
+          }
+
+        }
+      }
+    }
+    .sub-little-signUp-error {
+      font-size: 12px;
+    }
+    .userUrlContainer {
+      .userUrlBox {
+        width: 99%;
+        .userUrlInner {
+          padding : 0;
+        }
+        .userUrlButton {
+          letter-spacing: 0;
+          width: 95%;
+        }
+
+      }
+      .urlCancelButtons{
+        width: 37%;
+        font-size: 13px;
+      }
+      .urlButtons {
+        width: 37%;
+        font-size: 13px;
+      }
+    }
+
+  }
+}
+.smarttable{
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 450px) and (max-width: 767px) {
+  .profileContainer {
+    .userUrlContainer {
+      .userUrlBox {
+        .userUrlButton {
+          letter-spacing: 0;
+          width: 60%;
+        }
+
+      }
+    }
+
+  }
+}

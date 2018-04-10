@@ -1,0 +1,241 @@
+@import "../../../styles";
+@import "../../theme/sass/_auth";
+
+
+.main-campaign {
+  padding-top: 90px;
+  //Profile Tab CSS
+  .panel {
+    .panel-body {
+      .wizard {
+        min-width: 95%;
+        float: left;
+        background: #fff;
+        margin: 0 2.5%;
+        border: 1px solid #E0E0E0;
+        .profileTab {
+          width: 25%;
+          float: left;
+          text-align: center;
+          border-right: 1px solid #E0E0E0;
+          height: 50px;
+          line-height: 50px;
+          cursor: pointer;
+          font-size: 12px;
+          &:last-child {
+            border-right: none;
+          }
+          a {
+            text-transform: uppercase;
+            .profileIcon {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      .currentTab {
+        //font-size: 14px !important;
+        border-bottom: 3px solid $btn-color;
+        color: $btn-color;
+      }
+      .disableTab {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+.errorBox{
+  border-left: 5px solid #f7043a !important;
+}
+
+.has-error .form-control {
+  border-left: 5px solid #f7043a;
+}
+
+.has-error .form-control:focus {
+  box-shadow: aliceblue;
+  //border-bottom-left : #f7043a;
+}
+
+
+
+.has-success .form-control {
+  border-left: 5px solid #a6c733;
+  //border: 1.5px solid #a6c733;
+}
+
+.has-success .form-control:focus {
+  border: 1px solid #a6c733;
+  border-left: 5px solid #a6c733;
+}
+
+.alignTitle{
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 320px) and (max-width: 860px) {
+  .main-campaign {
+    .panel {     //Profile Tab CSS
+      .panel-body {
+        .wizard {
+          .profileTab {
+            a{
+              .tabText {
+                display: none;
+              }
+              .profileIcon {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .profileContainer {
+    .profileContent {
+      .profileForm {
+        .userImageContainer {
+          margin-bottom: 40px;
+          .profileDiv {
+            left: 20px;
+            bottom: -40px;
+            padding: 0;
+          }
+          .profileImage {
+            width: 94%;
+            font-size: 13px;
+          }
+
+        }
+      }
+    }
+    .sub-little-signUp-error {
+      font-size: 12px;
+    }
+    .userUrlContainer {
+      .userUrlBox {
+        width: 99%;
+        .userUrlInner {
+          padding : 0;
+        }
+        .userUrlButton {
+          letter-spacing: 0;
+          width: 95%;
+        }
+
+      }
+      .urlCancelButtons{
+        width: 37%;
+        font-size: 13px;
+      }
+      .urlButtons {
+        width: 37%;
+        font-size: 13px;
+      }
+    }
+
+  }
+}
+
+.adjustBottom{
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 767px){
+  .adjustTab{
+    padding-right:0 !important;
+  }
+
+}
+
+@media only screen and (max-width: 766px){
+  .adjustTab{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 10px !important;
+  }
+}
+//.ng2-tag-input-field{
+//  font-style: 'Conv_Avenir';
+//}
+
+.addUserContainer {
+  margin: 65px 2.5% 50px 2.5%;
+  padding: 15px;
+  background: white;
+  min-width: 95%;
+  border-radius: $border-radius;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  .profileImage {
+    font-size: 15px;
+    color: #777777;
+  }
+  .inputbutton {
+
+    text-align: center;
+    margin: 1.9% 0 2% 0;
+  }
+  .form-control{
+      border-radius: $border-radius;
+  }
+  .form-control[disabled] {
+    color: grey;
+    border-color: lightgrey;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .profileContent {
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 0%;
+  }
+  .btnNext {
+    float: right;
+    width: 150px;
+    height: 85%;
+    @media screen and (max-width: 767px) {
+      width: 35%;
+    }
+  }
+  .btnBackStyle {
+    float: left;
+    width: 150px;
+    height: 85%;
+    @media screen and (max-width: 767px) {
+      width: 35%;
+    }
+  }
+  .small {
+    font-size: 100%;
+  }
+  .profileDiv {
+    padding-bottom: 25px;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .help-block {
+    color: red;
+  }
+  .sub-little-text {
+    font-size: 12px;
+  }
+
+}
+
+@media only screen and (min-device-width: 310px) and (max-device-width: 320px) {
+  .profileForm {
+    padding-right: 0 !important;
+  }
+}

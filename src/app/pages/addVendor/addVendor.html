@@ -1,0 +1,217 @@
+<div class="main-campaign">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div class="wizard">
+                <div class="profileTab" [ngClass]="{'currentTab' : contactTab}" id="setting"
+                     (click)="changeTab('contact')"><a><i class="fa fa-address-card-o" aria-hidden="true"></i><span
+                        class="tabText">  Contact Information </span></a>
+                </div>
+
+                <div class="profileTab disableTab" [ngClass]="{'currentTab' : financeTab}" id="password"><a><i
+                        class="fa fa-credit-card-alt" aria-hidden="true"></i><span
+                        class="tabText">  Financial Information </span></a></div>
+
+                <div class="profileTab disableTab" [ngClass]="{'currentTab' : purchaseTab}" id="notification">
+                    <a><i class="fa fa-money" aria-hidden="true"></i><span class="tabText">  Purchase Orders </span></a>
+                </div>
+                <div class="profileTab disableTab" [ngClass]="{'currentTab' : paymentTab}" id="accredition">
+                    <a><i class="fa fa-file-text-o" aria-hidden="true"></i><span
+                            class="tabText">  Payment Receipt </span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="addUserContainer">
+    <div class="profileContent">
+        <div *ngIf="this.financeTab" class="col-md-12 row profileForm">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <h3 class="alignTitle alignAtphone"> Bank Details: </h3>
+            </div>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+            <div *ngIf="this.contactTab" class="col-md-12 row profileForm">
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Company Name </label>
+                    </div>
+                    <div [ngClass]="{'has-error': (form.controls['companyName'].invalid && form.controls['companyName'].touched), 'has-success': (form.controls['companyName'].valid && form.controls['companyName'].touched)}">
+                        <input maxlength="30" placeholder="Company Name" #firstName formControlName="companyName" type="text" class="form-control">
+                    </div>
+                    <div class="profileErrorMessage">
+                    <span *ngIf="(!form.get('companyName').valid && form.get('companyName').touched) && form.get('companyName').value != '' "
+                          class="help-block sub-little-signUp-error confpass"> Please Enter Valid Company Name </span>
+                        <span *ngIf="form.get('companyName').touched && form.get('companyName').value.trim() == '' "
+                              class="help-block sub-little-signUp-error confpass">Company Name is Required </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Contact Person Name </label>
+                    </div>
+                    <div [ngClass]="{'has-error': (form.controls['vendorName'].invalid && form.controls['vendorName'].touched), 'has-success': (form.controls['vendorName'].valid && form.controls['vendorName'].touched)}">
+                        <input maxlength="30" placeholder="Contact Person Name" #firstName formControlName="vendorName" type="text" class="form-control">
+                    </div>
+                    <div class="profileErrorMessage">
+                        <div class="profileErrorMessage">
+                            <span *ngIf="(!form.get('vendorName').valid && form.get('vendorName').touched) && form.get('vendorName').value != '' "
+                                  class="help-block sub-little-signUp-error confpass"> Please Enter Valid Contact Person Name </span>
+                            <span *ngIf="form.get('vendorName').touched && form.get('vendorName').value.trim() == '' "
+                                  class="help-block sub-little-signUp-error confpass">Contact Person Name is Required </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Email </label>
+                    </div>
+                    <div [ngClass]="{'has-error': (form.controls['email'].invalid && form.controls['email'].touched), 'has-success': (form.controls['email'].valid && form.controls['email'].touched)}">
+                        <input placeholder="Email" formControlName="email" type="text" class="form-control">
+                    </div>
+                    <div class="profileErrorMessage">
+                    <span *ngIf="(!form.get('email').valid && form.get('email').touched) && form.get('email').value != '' "
+                          class="help-block sub-little-signUp-error confpass"> Please enter valid Email Id </span>
+                        <span *ngIf="form.get('email').touched && form.get('email').value == '' "
+                              class="help-block sub-little-signUp-error confpass">Email Id is Required </span>
+                    </div>
+                </div>
+
+                <!--<div class="col-md-6 adjustBottom">-->
+                    <!--<div>-->
+                        <!--<label class="labelStyle"> Contact Number </label>-->
+                    <!--</div>-->
+                    <!--<div [ngClass]="{'has-error': ((form.controls['phoneNumber'].invalid && form.controls['phoneNumber'].touched) || contactMessage ), 'has-success': ( (form.controls['phoneNumber'].valid && form.controls['phoneNumber'].touched)|| (contactMessage == false ))}">-->
+                        <!--<input [ngClass]="{'errorBox' : (contactMessage) }"   [textMask]="{mask: numberMask,guide : false}" style="float: left; width:100%;" class="form-control"-->
+                               <!--formControlName="phoneNumber" type="text"/>-->
+                    <!--</div>-->
+                    <!--<div class="profileErrorMessage">-->
+                        <!--<span *ngIf="contactMessage"-->
+                              <!--class="help-block sub-little-signUp-error confpass"> Please Enter Valid Contact Number </span>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Contact Number </label>
+                    </div>
+                    <div [ngClass]="{'has-error': (form.controls['phoneNumber'].invalid && form.controls['phoneNumber'].touched), 'has-success': (form.controls['phoneNumber'].valid && form.controls['phoneNumber'].touched)}">
+                        <input placeholder="Contact Number" [textMask]="{mask: numberMask,guide : false}" style="float: left; width:100%;" class="form-control"
+                               formControlName="phoneNumber" type="text"/>
+                    </div>
+                    <div class="profileErrorMessage">
+                    <span *ngIf="!form.get('phoneNumber').valid && form.get('phoneNumber').touched"
+                          class="help-block sub-little-signUp-error confpass"> Please Enter Min 10 Digit Contact Number </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Address Line 1 </label>
+                    </div>
+                    <div [ngClass]="{'has-error': (form.controls['AddressOne'].invalid && form.controls['AddressOne'].touched), 'has-success': (form.controls['AddressOne'].valid && form.controls['AddressOne'].touched)}">
+                        <input maxlength="40" placeholder="Address Line 1" formControlName="AddressOne" type="text" class="form-control">
+                    </div>
+                    <div class="profileErrorMessage">
+                    <span *ngIf="(!form.get('AddressOne').valid && form.get('AddressOne').touched) && form.get('AddressOne').value != '' "
+                          class="help-block sub-little-signUp-error confpass"> Please enter valid Address Line 1 </span>
+                        <!--<span *ngIf="form.get('AddressOne').touched && form.get('AddressOne').value.trim() == '' "-->
+                              <!--class="help-block sub-little-signUp-error confpass"> Address Line 1 is Required </span>-->
+                    </div>
+                </div>
+
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Address Line 2 </label>
+                    </div>
+                    <div [ngClass]="{'has-error': (form.controls['AddressTwo'].invalid && form.controls['AddressTwo'].touched), 'has-success': (form.controls['AddressTwo'].valid && form.controls['AddressTwo'].touched)}">
+                        <input maxlength="40" placeholder="Address Line 2" formControlName="AddressTwo" type="text" class="form-control">
+                    </div>
+                    <div class="profileErrorMessage">
+                    <span *ngIf="(!form.get('AddressTwo').valid && form.get('AddressTwo').touched) && form.get('AddressTwo').value != '' "
+                          class="help-block sub-little-signUp-error confpass"> Please enter valid Address Line 2 </span>
+                        <!--<span *ngIf="form.get('AddressTwo').touched && form.get('AddressTwo').value.trim() == '' "-->
+                              <!--class="help-block sub-little-signUp-error confpass"> Address Line 2 is Required </span>-->
+                    </div>
+                </div>
+
+                <div class="col-md-6 adjustBottom">
+                    <div class="col-md-12 row" style="padding : 0; margin: 0;">
+
+                        <div style="padding: 0" class="col-md-6">
+                            <div>
+                                <label class="labelStyle"> City </label>
+                            </div>
+                            <div [ngClass]="{'has-error': (form.controls['city'].invalid && form.controls['city'].touched), 'has-success': (form.controls['city'].valid && form.controls['city'].touched)}">
+                                <input placeholder="City" formControlName="city" type="text" class="form-control">
+                            </div>
+                            <div class="profileErrorMessage">
+                    <span *ngIf="(!form.get('city').valid && form.get('city').touched) && form.get('city').value != '' "
+                          class="help-block sub-little-signUp-error confpass"> Please enter valid City Field </span>
+                            </div>
+                        </div>
+
+                        <div class="adjustTab col-md-6">
+                            <div>
+                                <label class="labelStyle"> Pincode </label>
+                            </div>
+                            <div [ngClass]="{'has-error': ((form.controls['pin_code'].invalid && form.controls['pin_code'].touched) || pinMessage), 'has-success': ((form.controls['pin_code'].valid && form.controls['pin_code'].touched) || (pinMessage == false))}">
+                                <input placeholder="Pincode" [ngClass]="{'errorBox' : (pinMessage) }"  [textMask]="{mask: pinMask,guide : false}" style="float: left; width:100%;" class="form-control"
+                                       formControlName="pin_code" type="text"/>
+                            </div>
+                            <div class="profileErrorMessage">
+                                 <!--<span *ngIf="pinMessage"-->
+                                      <!--class="help-block sub-little-signUp-error confpass"> Please Enter valid Pincode </span>-->
+                                <span *ngIf="!form.get('pin_code').valid && form.get('pin_code').touched"
+                                      class="help-block sub-little-signUp-error confpass"> Please Enter 6 Digit Pincode </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-6 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> State </label>
+                    </div>
+                    <div  [ngClass]="{'has-error': (form.controls['state'].invalid && form.controls['state'].touched), 'has-success': (form.controls['state'].valid && form.controls['state'].touched)}">
+                        <select  class="form-control selectBox" formControlName="state">
+                            <option style="color: gray" value="" disabled selected> States</option>
+                            <option *ngFor="let state of statesData" value="{{state.state}}">{{state.state}}</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-12 adjustBottom">
+                    <div>
+                        <label class="labelStyle"> Categories </label>
+                        <rl-tag-input [placeholder]='placeHolderForTag' [autocompleteMustMatch]="true" [autocompleteItems]="tagsArray" [autocomplete]="true" formControlName="tags" (removeTag)="removeCandidatetags($event);" (addTag)="addCandidatetags(event)"></rl-tag-input>
+                    </div>
+                    <div class="profileErrorMessage">
+                            <span *ngIf="form.controls['tags'].dirty && form.controls['tags'].invalid"
+                                  class="help-block sub-little-signUp-error confpass"> Categories are Required </span>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="col-md-12 row" *ngIf="this.contactTab">-->
+                <!--<div class="col-md-12 form-group inputbutton submitButton">-->
+                    <!--<button (click)="goBack()" class="btnStyle btnBackStyle"> Back</button>-->
+                    <!--&lt;!&ndash;<button class="btnStyle btnNext" (click)="changeTab('finance')"> Next</button>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="col-md-12 row" *ngIf="this.contactTab">
+                <div class="col-md-12 form-group inputbutton submitButton">
+                    <button (click)="goBack()" class="btnStyle btnBackStyle"> Back</button>
+                    <button [ngClass]="{'disableSubmit' : (!form.valid) }"
+                            [disabled]="!form.valid" type="submit" class="btnNext btnStyle">ADD VENDOR
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

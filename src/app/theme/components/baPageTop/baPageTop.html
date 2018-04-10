@@ -1,0 +1,29 @@
+<div class="page-top clearfix" baScrollPosition maxHeight="50" (scrollChange)="scrolledChanged($event)"
+     [ngClass]="{scrolled: isScrolled}">
+    <a (click)="navigateToDashboard()" class="al-logo clearfix"><img src="https://tudip.com/wp-content/uploads/2017/07/tudip_80x35.png"></a>
+    <!-- <a routerLink="/pages/dashboard" class="al-logo clearfix"><span>ng2-</span>admin</a>-->
+    <a href (click)="toggleMenu()" class="collapse-menu-link ion-navicon"></a>
+
+    <!--  <div class="search">
+        <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+        <input id="searchInput" type="text" placeholder="Search for...">
+      </div>-->
+
+    <div class="user-profile clearfix">
+        <div class="dropdown al-user-profile">
+            <a class="profile-toggle-link dropdown-toggle" id="user-profile-dd" data-toggle="dropdown"
+               aria-expanded="false">
+                <div class="user-picture-circle">
+                <!--<img src="{{userProfileImage}}">-->
+                </div>
+                <div class="profile-user-name"><span>Hi, {{userName | capitalize}} <i class="fa fa-angle-down"></i></span></div>
+            </a>
+            <ul class="dropdown-menu top-dropdown-menu profile-dropdown" aria-labelledby="user-profile-dd">
+                <li class="dropdown-item"><a class="signout" (click)="navigateToProfile()"><i class="fa fa-cog"></i>Account</a></li>
+                <!--<li *ngIf='isAdmin' class="dropdown-item"><a class="signout" (click)="navigateToProfile()"><i class="fa fa-user"></i>Investor Profile</a></li>-->
+                <li class="dropdown-item"><a class="signout" (click)="loggedOff()"><i class="fa fa-power-off"></i>Sign
+                    out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

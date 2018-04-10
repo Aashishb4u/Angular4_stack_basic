@@ -1,0 +1,363 @@
+@import "../../../styles";
+@import "../../theme/sass/_auth";
+
+
+.main-campaign {
+  padding-top: 90px;
+  //Profile Tab CSS
+  .panel {
+    .panel-body {
+      .wizard {
+        min-width: 95%;
+        float: left;
+        background: #fff;
+        margin: 0 2.5%;
+        border: 1px solid #E0E0E0;
+        .profileTab {
+          width: 20%;
+          float: left;
+          text-align: center;
+          border-right: 1px solid #E0E0E0;
+          height: 50px;
+          line-height: 50px;
+          cursor: pointer;
+          font-size: 12px;
+          &:last-child {
+            border-right: none;
+          }
+          a {
+            text-transform: uppercase;
+            .profileIcon {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      .currentTab {
+        //font-size: 14px !important;
+        border-bottom: 3px solid $btn-color;
+        color: $btn-color;
+      }
+      .disableTab {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .main-campaign {
+    .panel {     //Profile Tab CSS
+      .panel-body {
+        .wizard {
+          .profileTab {
+            a{
+              .tabText {
+                display: none;
+              }
+              .profileIcon {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .profileContainer {
+    .profileContent {
+      .profileForm {
+        .userImageContainer {
+          margin-bottom: 40px;
+          .profileDiv {
+            left: 20px;
+            bottom: -40px;
+            padding: 0;
+          }
+          .profileImage {
+            width: 94%;
+            font-size: 13px;
+          }
+
+        }
+      }
+    }
+    .sub-little-signUp-error {
+      font-size: 12px;
+    }
+    .userUrlContainer {
+      .userUrlBox {
+        width: 99%;
+        .userUrlInner {
+          padding : 0;
+        }
+        .userUrlButton {
+          letter-spacing: 0;
+          width: 95%;
+        }
+
+      }
+      .urlCancelButtons{
+        width: 37%;
+        font-size: 13px;
+      }
+      .urlButtons {
+        width: 37%;
+        font-size: 13px;
+      }
+    }
+
+  }
+}
+
+@media only screen and (min-width: 767px){
+  .adjustTab{
+    padding-right: 0 !important;
+  }
+}
+@media only screen and (max-width: 576px){
+  .adjustInputs{
+    margin-top: 14px;
+  }
+}
+
+.disabledButton {
+  padding: 0.1875rem 0.625rem;
+  margin-left: 0.9px;
+  color: #cacaca;
+  cursor: not-allowed;
+}
+
+//#vendorPurchaseTable{
+//  margin-top: 15px;
+//}
+
+@media only screen and (max-width: 766px){
+  .adjustTab{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-top: 10px !important;
+  }
+  .adjustTables{
+    border-bottom: 1px solid lightgray;
+    border-right: none !important;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 990px){
+  .adjustbutton {
+    margin-top: 15px;
+  }
+}
+
+.smart-header {
+  font-weight: bold;
+  color: #374767 ;
+}
+
+.adjustTables{
+  border-right: 1px solid lightgray;
+}
+
+
+
+.adjustBottom{
+  margin-bottom: 15px;
+}
+
+.addUserContainer {
+  margin: 65px 2.5% 50px 2.5%;
+  padding: 15px;
+  background: white;
+  min-width: 95%;
+  border-radius: $border-radius;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  .profileImage {
+    font-size: 15px;
+    color: #777777;
+  }
+  .inputbutton {
+
+    text-align: center;
+    margin: 1.9% 0 2% 0;
+  }
+  .form-control{
+      border-radius: $border-radius;
+  }
+  .form-control[disabled] {
+    color: grey;
+    border-color: lightgrey;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .profileContent {
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 0%;
+  }
+  .btnNext {
+    float: right;
+    width: 150px;
+    height: 85%;
+    @media screen and (max-width: 767px) {
+      width: 35%;
+    }
+  }
+  .btnBackStyle {
+    float: left;
+    width: 150px;
+    height: 85%;
+    @media screen and (max-width: 767px) {
+      width: 35%;
+    }
+  }
+  .small {
+    font-size: 100%;
+  }
+  .profileDiv {
+    padding-bottom: 25px;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .help-block {
+    color: red;
+  }
+  .sub-little-text {
+    font-size: 12px;
+  }
+
+}
+
+.NewUserContainer {
+  margin: 15px 2.5% 15px 2.5%;
+  padding: 15px;
+  background: white;
+  min-width: 95%;
+  border-radius: $border-radius;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+  .profileImage {
+    font-size: 15px;
+    color: #777777;
+  }
+  .inputbutton {
+    text-align: center;
+    margin: 1.9% 0 2% 0;
+  }
+  .form-control{
+    border-radius: $border-radius;
+  }
+  .form-control[disabled] {
+    color: grey;
+    border-color: lightgrey;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .profileContent {
+    margin-top: 2%;
+    margin-left: 2.5%;
+    margin-right: 0%;
+  }
+  .btnNext {
+    float: right;
+    width: 150px;
+    height: 85%;
+    @media screen and (max-width: 767px) {
+      width: 35%;
+    }
+  }
+  .btnBackStyle {
+    float: left;
+    width: 150px;
+    height: 85%;
+    @media screen and (max-width: 767px) {
+      width: 35%;
+    }
+  }
+  .small {
+    font-size: 100%;
+  }
+  .profileDiv {
+    padding-bottom: 25px;
+  }
+  .disableSubmit {
+    opacity: 0.8;
+    cursor: not-allowed;
+    &:hover {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+  .help-block {
+    color: red;
+  }
+  .sub-little-text {
+    font-size: 12px;
+  }
+
+}
+
+
+.has-error .form-control {
+  border-left: 5px solid #f7043a;
+}
+
+.has-error .form-control:focus {
+  box-shadow: aliceblue;
+  //border-bottom-left : #f7043a;
+}
+
+.has-success .form-control {
+  border-left: 5px solid #a6c733;
+  //border: 1.5px solid #a6c733;
+}
+
+.ion-edit:before {
+  content: "\F2BF";
+  margin-right: 14px;
+  color: #000000;
+}
+.ion-trash-b:before {
+  content: "\F252";
+  color: #ff0000;
+}
+.closeTab {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+.errorBox{
+  border-left: 5px solid #f7043a !important;
+}
+//.has-success .form-control:focus {
+//  border: 1px solid #a6c733;
+//  border-left: 5px solid #a6c733;
+//}
+
+@media only screen and (min-device-width: 310px) and (max-device-width: 320px) {
+  .profileForm {
+    padding-right: 0 !important;
+  }
+}
